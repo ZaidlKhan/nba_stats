@@ -8,7 +8,7 @@ from matplotlib import style
 import matplotlib.pyplot as pyplot
 from sklearn.utils import shuffle
 
-path = "nba_stats/player_stats/RS_player_stats_2019.csv"
+path = "player_stats/RS_player_stats_2019.csv"
 
 data = pd.read_csv(path, sep=";")
 player_test = data.iloc[318]
@@ -47,7 +47,7 @@ linear.fit(x_train, y_train)
 #        with open("stats_model.pickle", "wb") as f:
 #            pickle.dump(linear, f)
 
-pickle_in = open("nba_stats/stats_model.pickle", "rb")
+pickle_in = open("stats_model.pickle", "rb")
 linear = pickle.load(pickle_in)
 
 predictions = linear.predict(x_test)
