@@ -4,13 +4,17 @@ import numpy as np
 import sklearn
 from sklearn import linear_model, preprocessing, ensemble
 from sklearn.neighbors import KNeighborsClassifier
+<<<<<<< HEAD
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.impute import SimpleImputer
+=======
+>>>>>>> 1de9927886771824d50981148e795c6d7701a8be
 
 path = "player_stats/NBA_Player_Stats.csv"
 
 data = pd.read_csv(path)
+<<<<<<< HEAD
 
 data = data[["Age", "G", "GS", "MP", "FG", "FGA", "FG%", "3P", "3PA",
              "2P", "2PA", "2P%", "eFG%", "FT", "FT%", "ORB", "DRB", "TRB", "AST",
@@ -35,3 +39,15 @@ linear.fit(x_train, y_train)
 acc = linear.score(x_test, y_test)
 
 print(data.head())
+=======
+
+data = data[["Player", "Age", "G", "GS", "MP", "FG", "FGA", "FG%", "3P", "3PA",
+             "2P", "2PA" , "2P%", "eFG%", "FT", "FT%", "ORB", "DRB", "TRB", "AST",
+             "STL", "BLK", "TOV", "PF", "PTS"]]
+
+data.fillna(0, inplace = True)
+
+lebron_james_stats_only = data[data['Player'] == 'LeBron James']
+
+print(lebron_james_stats_only)
+>>>>>>> 1de9927886771824d50981148e795c6d7701a8be
